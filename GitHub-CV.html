@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Julia Moyo | Developer</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Georgia', serif;
+  scroll-snap-type: y mandatory;
+}
+
+/* Each section = full screen */
+.section {
+  height: 100vh;
+  padding: 100px 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  scroll-snap-align: start;
+}
+
+/* ---------------- INTRO PAGE (BLUSH PINK) ---------------- */
+
+.intro {
+  background-color:  #ffd1dc;
+  color: #2e1a24;
+}
+
+.intro h1 {
+  font-size: 3.5rem;
+  margin-bottom: 10px;
+}
+
+.intro h2 {
+  font-weight: normal;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.intro p {
+  max-width: 600px;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+.links a {
+  text-decoration: none;
+  margin-right: 20px;
+  font-weight: bold;
+  color: #b03060;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
+/* ---------------- EDUCATION PAGE (VIOLET) ---------------- */
+
+.experience {
+  background-color: #2e1a24;
+  color:#ffd1dc;
+}
+
+.experience h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+.timeline-item {
+  margin-bottom: 30px;
+  padding-left: 20px;
+  border-left: 3px solid #f86eec;
+}
+
+.date {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.timeline-item h3 {
+  margin: 5px 0;
+}
+
+/* ---------------- PROJECTS PAGE  ---------------- */
+
+.projects {
+  background-color: #ffd1dc ;
+  color: #2e1a24;
+}
+
+.projects h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+.project-card {
+  margin-bottom: 25px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.project-card:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.project-card h3 {
+  margin-bottom: 10px;
+}
+
+.project-card p {
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+footer {
+  margin-top: 40px;
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+</style>
+</head>
+<body>
+
+<!-- INTRO SECTION -->
+<section class="section intro">
+  <h1>Hi, I’m Julia Moyo</h1>
+  <h2>Software Developer (noun • /ˈsɔːftwɛr ˌɛndʒɪˈnɪər/)</h2>
+  <p>
+    A solution-driven problem solver who transitioned from journalism into tech.
+    I build with intention, learn with discipline, and grow one commit at a time.
+  </p>
+
+  <div class="links">
+    <a href="#">GitHub</a>
+    <a href="#">LinkedIn</a>
+  </div>
+</section>
+
+<!-- EXPERIENCE SECTION -->
+<section class="section experience">
+  <h2>Education</h2>
+
+  <div class="timeline-item">
+    <span class="date">2025 – Present</span>
+    <h3>SheCodes Student</h3>
+    <p>Building responsive websites using HTML, CSS and JavaScript.</p>
+  </div>
+
+  <div class="timeline-item">
+    <span class="date">2025 – Present</span>
+    <h3>WeThinkCode_</h3>
+    <p>NQF 6: Software Development</p>
+  </div>
+
+  <div class="timeline-item">
+    <span class="date">2021 – 2023</span>
+    <h3>IIE Rosebank College</h3>
+    <p>Diploma In Journalism Studies</p>
+  </div>
+</section>
+
+<!-- PROJECTS SECTION -->
+<section class="section projects">
+  <h2>Projects</h2>
+
+  <div class="project-card">
+    <h3>Weather App</h3>
+    <p>A basic JavaScript weather application.</p>
+  </div>
+
+  <div class="project-card">
+    <h3>Learning to Code Landing Page</h3>
+    <p>A motivational landing page built with HTML & CSS featuring gradients and interactive styling.</p>
+  </div>
+
+  <div class="project-card">
+    <h3>GitHub Portfolio Website</h3>
+    <p>This multi-section portfolio showcasing my journey and technical growth.</p>
+  </div>
+
+  <div class="project-card">
+    <h3>Tic-Tac-Toe Game</h3>
+    <p>A basic Tic-Tac-Toe game built using python</p>
+  </div>
+
+  <footer>
+    © 2026 Julia Moyo | Built with HTML & CSS 💗
+  </footer>
+</section>
+
+</body>
+</html>
