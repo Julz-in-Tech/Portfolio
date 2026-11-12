@@ -176,73 +176,27 @@ section {
   background: var(--green);
 }
 
-.music {
+.nav-cv {
   flex: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 10px;
-  border: 1px solid var(--border);
+  padding: 6px 12px;
   border-radius: 8px;
-  background: transparent;
+  background: var(--pink);
   font-family: var(--mono);
   font-size: 13px;
-  color: var(--dim);
-  cursor: pointer;
-  transition: color 0.2s, border-color 0.2s;
+  font-weight: 700;
+  color: #1a0b13;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.2s, transform 0.2s;
 }
 
-.music:hover,
-.music.on {
-  color: var(--pink);
-  border-color: var(--pink);
-}
-
-.eq {
-  display: inline-flex;
-  align-items: flex-end;
-  gap: 2px;
-  height: 12px;
-}
-
-.eq i {
-  width: 3px;
-  height: 4px;
-  border-radius: 1px;
-  background: currentColor;
-}
-
-.eq i:nth-child(2) {
-  height: 9px;
-}
-
-.eq i:nth-child(3) {
-  height: 6px;
-}
-
-.music.on .eq i {
-  animation: eq 0.9s ease-in-out infinite alternate;
-}
-
-.music.on .eq i:nth-child(2) {
-  animation-delay: -0.3s;
-}
-
-.music.on .eq i:nth-child(3) {
-  animation-delay: -0.6s;
-}
-
-@keyframes eq {
-  from {
-    height: 3px;
-  }
-  to {
-    height: 12px;
-  }
+.nav-cv:hover {
+  background: var(--green);
+  transform: translateY(-1px);
 }
 
 @media (max-width: 560px) {
-  .music-label {
+  .nav-cv-long {
     display: none;
   }
 }

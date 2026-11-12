@@ -11,9 +11,6 @@ export const profile = {
   linkedin: "https://www.linkedin.com/in/julia-moyo-57444232b",
   // Put the PDF in public/ with exactly this name. The download buttons appear once it exists.
   cv: "./Julia-Moyo-CV.pdf",
-  // Optional background track: put an MP3 in public/ with exactly this name.
-  // Without it, the music button plays a built-in loop instead.
-  music: "./background-music.mp3",
   // Words cycled through in the hero: "I build ___"
   builds: [
     "full stack web apps",

@@ -23,9 +23,6 @@ function useFile(url: string, type: string) {
 /** Is the CV there? Keeps us from showing a dead download button. */
 export const useCv = () => useFile(profile.cv, "pdf");
 
-/** Is there a background track? If not, the music button plays the built-in loop. */
-export const useTrack = () => useFile(profile.music, "audio");
-
 export const reducedMotion = () =>
   window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 

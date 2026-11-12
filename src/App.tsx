@@ -1,7 +1,6 @@
 import type { PointerEvent } from "react";
 import { certifications, profile, skills, timeline } from "./data";
 import { useCv, useGitHub, useIntro, useReveal, useScrollProgress } from "./hooks";
-import Music from "./Music";
 import Pipeline from "./Pipeline";
 import Projects from "./Projects";
 import Terminal from "./Terminal";
@@ -70,7 +69,11 @@ export default function App() {
             </a>
           ))}
         </nav>
-        <Music />
+        {cv && (
+          <a className="nav-cv" href={profile.cv} download>
+            <span className="nav-cv-long">Download </span>CV ↓
+          </a>
+        )}
       </header>
 
       <main>
@@ -104,11 +107,6 @@ export default function App() {
                 <a className="btn btn-primary" href="#work">
                   See my work ↓
                 </a>
-                {cv && (
-                  <a className="btn" href={profile.cv} download>
-                    Download CV ↓
-                  </a>
-                )}
                 <a className="btn" href={profile.github} target="_blank" rel="noreferrer">
                   GitHub ↗
                 </a>
