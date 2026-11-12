@@ -197,7 +197,7 @@ export default function App() {
                   />
                 </div>
                 <figcaption>
-                  <span className="c-pink">2023</span> // Diploma in Journalism Studies, where the
+                  <span className="c-pink">2024</span> // Diploma in Journalism Studies, where the
                   story started.
                 </figcaption>
               </figure>

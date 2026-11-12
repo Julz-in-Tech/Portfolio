@@ -164,6 +164,11 @@ export type Certification = {
 // To add one: copy a block, and paste the "Show credential" URL from LinkedIn into `link`.
 export const certifications: Certification[] = [
   {
+    name: "SheCodes Basics Certificate",
+    issuer: "SheCodes",
+    when: "Feb 2026",
+  },
+  {
     name: "Red Hat Enterprise Linux Technical Overview (RH024)",
     issuer: "Red Hat",
     when: "2026",
