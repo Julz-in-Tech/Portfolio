@@ -21,6 +21,7 @@ const HELP: [string, string][] = [
   ["repos", "latest activity, live from GitHub"],
   ["pipeline", "watch how I ship"],
   ["contact", "where to find me"],
+  ["cv", "download my CV"],
   ["ls / cat <file>", "poke around the file system"],
   ["history", "commands you have run"],
   ["clear", "wipe the screen"],
@@ -41,6 +42,7 @@ const COMMANDS = [
   "certs",
   "clear",
   "contact",
+  "cv",
   "help",
   "history",
   "journey",
@@ -103,7 +105,7 @@ function PipelineRun({ onTick }: { onTick: () => void }) {
 
 let nextId = 0;
 
-export default function Terminal({ gh }: { gh: GitHubData }) {
+export default function Terminal({ gh, cv }: { gh: GitHubData; cv: boolean }) {
   const clock = useClock();
   const [lines, setLines] = useState<Line[]>([]);
   const [value, setValue] = useState("");
@@ -372,6 +374,28 @@ export default function Terminal({ gh }: { gh: GitHubData }) {
             </div>
           </>
         );
+      case "cv":
+      case "resume": {
+        if (!cv) {
+          return (
+            <p>
+              CV not uploaded yet. Meanwhile, try <Run cmd="contact" />.
+            </p>
+          );
+        }
+        const a = document.createElement("a");
+        a.href = profile.cv;
+        a.download = "";
+        a.click();
+        return (
+          <p>
+            Downloading <b className="c-green">Julia-Moyo-CV.pdf</b>. Didn't start?{" "}
+            <a href={profile.cv} download>
+              Get it here ↓
+            </a>
+          </p>
+        );
+      }
       case "ls":
         return (
           <p className="ls">

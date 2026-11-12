@@ -1,6 +1,7 @@
 import type { PointerEvent } from "react";
 import { certifications, profile, skills, timeline } from "./data";
-import { useGitHub, useIntro, useReveal, useScrollProgress } from "./hooks";
+import { useCv, useGitHub, useIntro, useReveal, useScrollProgress } from "./hooks";
+import Music from "./Music";
 import Pipeline from "./Pipeline";
 import Projects from "./Projects";
 import Terminal from "./Terminal";
@@ -20,6 +21,7 @@ const Caret = () => (
 
 export default function App() {
   const gh = useGitHub();
+  const cv = useCv();
   const progress = useScrollProgress();
   const intro = useIntro(CMD, FIRST + LAST, profile.role);
   const done = intro.phase === "done";
@@ -68,6 +70,7 @@ export default function App() {
             </a>
           ))}
         </nav>
+        <Music />
       </header>
 
       <main>
@@ -101,6 +104,11 @@ export default function App() {
                 <a className="btn btn-primary" href="#work">
                   See my work ↓
                 </a>
+                {cv && (
+                  <a className="btn" href={profile.cv} download>
+                    Download CV ↓
+                  </a>
+                )}
                 <a className="btn" href={profile.github} target="_blank" rel="noreferrer">
                   GitHub ↗
                 </a>
@@ -276,7 +284,7 @@ export default function App() {
             <p>This one is real. Type a command or click any pink one.</p>
           </div>
           <div data-reveal>
-            <Terminal gh={gh} />
+            <Terminal gh={gh} cv={cv} />
           </div>
         </section>
 
@@ -290,6 +298,11 @@ export default function App() {
             <a className="btn btn-primary" href={profile.linkedin} target="_blank" rel="noreferrer">
               Message me on LinkedIn ↗
             </a>
+            {cv && (
+              <a className="btn" href={profile.cv} download>
+                Download CV ↓
+              </a>
+            )}
             <a className="btn" href={profile.github} target="_blank" rel="noreferrer">
               Follow on GitHub ↗
             </a>

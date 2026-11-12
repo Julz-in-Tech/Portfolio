@@ -8,7 +8,7 @@ Built with React, TypeScript and Vite. No UI libraries, just hand-written CSS.
 
 The whole site is a terminal, styled after the VS Code integrated terminal (grey, dark pink and green).
 
-- Commands: `about`, `projects` (filter with `projects ai`), `open <name>`, `skills`, `journey`, `certs`, `repos`, `pipeline`, `contact`, `ls`, `cat <file>`, `history`, `clear`, and `sudo hire julia`.
+- Commands: `about`, `projects` (filter with `projects ai`), `open <name>`, `skills`, `journey`, `certs`, `repos`, `pipeline`, `contact`, `cv`, `ls`, `cat <file>`, `history`, `clear`, and `sudo hire julia`.
 - Command history (↑ / ↓), Tab completion, Ctrl+L to clear.
 - Every command is also clickable, so visitors never have to type.
 - `repos` pulls live data from the GitHub API, with built-in fallback content.

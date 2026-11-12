@@ -1,5 +1,30 @@
 import { useEffect, useState } from "react";
-import { GITHUB_USER, fallbackRepos, fallbackStats, type Repo } from "./data";
+import { GITHUB_USER, fallbackRepos, fallbackStats, profile, type Repo } from "./data";
+
+/** True once `url` is confirmed to exist in public/ with the expected content type. */
+function useFile(url: string, type: string) {
+  const [available, setAvailable] = useState(false);
+  useEffect(() => {
+    let alive = true;
+    fetch(url, { method: "HEAD" })
+      .then((r) => {
+        // Dev servers answer missing files with the HTML page, so check the type too.
+        const match = (r.headers.get("content-type") ?? "").includes(type);
+        if (alive) setAvailable(r.ok && match);
+      })
+      .catch(() => {});
+    return () => {
+      alive = false;
+    };
+  }, [url, type]);
+  return available;
+}
+
+/** Is the CV there? Keeps us from showing a dead download button. */
+export const useCv = () => useFile(profile.cv, "pdf");
+
+/** Is there a background track? If not, the music button plays the built-in loop. */
+export const useTrack = () => useFile(profile.music, "audio");
 
 export const reducedMotion = () =>
   window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -16,10 +41,8 @@ export function useIntro(cmd: string, name: string, role: string) {
 
   useEffect(() => {
     const finished = { cmd: cmd.length, name: name.length, role: role.length, phase: "done" as const };
-    if (reducedMotion()) {
-      setState(finished);
-      return;
-    }
+    // Runs even when the device asks for reduced motion (battery saver often turns that on):
+    // text appearing key by key is not movement, and it is the point of the hero.
     let cancelled = false;
     let timer = 0;
     const wait = (ms: number) => new Promise<void>((r) => (timer = window.setTimeout(r, ms)));
