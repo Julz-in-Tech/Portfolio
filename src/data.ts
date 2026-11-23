@@ -37,6 +37,7 @@ export type Project = {
   stack: string[];
   categories: Category[];
   repo?: string;
+  repoLabel?: string;
   live?: string;
   badge?: string;
 };
@@ -47,19 +48,24 @@ export const projects: Project[] = [
   {
     slug: "boikanyo-legacy",
     name: "Boikanyo Legacy",
-    blurb: "A live project built under the Boikanyo Legacy name.",
-    detail: "The source repository is private.",
-    stack: [],
+    blurb: "A mobile-first marketing and ordering site for personalised kids' party packs.",
+    detail: "Built for a South African business that makes personalised kids' party packs.",
+    stack: ["TypeScript", "HTML", "CSS", "JavaScript"],
     categories: ["fullstack"],
+    repo: "https://github.com/Julz-in-Tech/Boikanyo-Legacy-",
+    repoLabel: "Private source",
     live: "https://boikanyo-legacy.vercel.app/",
   },
   {
     slug: "commuteit",
     name: "CommuteIt",
-    blurb: "A live project focused on commuting.",
-    detail: "The source repository is private.",
-    stack: [],
+    blurb: "Moves parcels between local spaza shops with people already travelling that way.",
+    detail:
+      "Drop a parcel at a nearby shop, a runner carries it along their usual route, and the recipient collects it from a shop near them.",
+    stack: ["TypeScript", "PL/pgSQL", "CSS"],
     categories: ["fullstack"],
+    repo: "https://github.com/MonamaTV/commuteit",
+    repoLabel: "Private source",
     live: "https://commuteit.vercel.app/",
   },
   {

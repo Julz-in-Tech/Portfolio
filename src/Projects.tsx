@@ -61,7 +61,7 @@ export default function Projects({ repos, live }: { repos: Repo[]; live: boolean
               )}
               {p.repo && (
                 <a href={p.repo} target="_blank" rel="noreferrer">
-                  Code <span aria-hidden>↗</span>
+                  {p.repoLabel ?? "Code"} <span aria-hidden>↗</span>
                 </a>
               )}
             </div>

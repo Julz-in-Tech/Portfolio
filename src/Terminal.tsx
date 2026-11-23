@@ -220,7 +220,7 @@ export default function Terminal({ gh, cv }: { gh: GitHubData; cv: boolean }) {
             {p.stack.length > 0 && <p className="c-dim">[{p.stack.join(" · ")}]</p>}
             <p className="links">
               {p.live && <Ext href={p.live}>live demo ↗</Ext>}
-              {p.repo && <Ext href={p.repo}>source ↗</Ext>}
+              {p.repo && <Ext href={p.repo}>{p.repoLabel?.toLowerCase() ?? "source"} ↗</Ext>}
             </p>
           </div>
         ))}
