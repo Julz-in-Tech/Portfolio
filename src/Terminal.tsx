@@ -217,10 +217,10 @@ export default function Terminal({ gh, cv }: { gh: GitHubData; cv: boolean }) {
             </p>
             <p>{p.blurb}</p>
             <p className="c-dim">{p.detail}</p>
-            <p className="c-dim">[{p.stack.join(" · ")}]</p>
+            {p.stack.length > 0 && <p className="c-dim">[{p.stack.join(" · ")}]</p>}
             <p className="links">
               {p.live && <Ext href={p.live}>live demo ↗</Ext>}
-              <Ext href={p.repo}>source ↗</Ext>
+              {p.repo && <Ext href={p.repo}>source ↗</Ext>}
             </p>
           </div>
         ))}
@@ -269,7 +269,7 @@ export default function Terminal({ gh, cv }: { gh: GitHubData; cv: boolean }) {
               ))}
             </p>
           );
-        const url = p.live ?? p.repo;
+        const url = p.live ?? p.repo ?? "#";
         window.open(url, "_blank", "noopener");
         return (
           <p>

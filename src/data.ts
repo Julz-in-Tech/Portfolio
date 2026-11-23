@@ -36,7 +36,7 @@ export type Project = {
   detail: string;
   stack: string[];
   categories: Category[];
-  repo: string;
+  repo?: string;
   live?: string;
   badge?: string;
 };
@@ -44,6 +44,24 @@ export type Project = {
 const gh = (repo: string) => `https://github.com/${GITHUB_USER}/${repo}`;
 
 export const projects: Project[] = [
+  {
+    slug: "boikanyo-legacy",
+    name: "Boikanyo Legacy",
+    blurb: "A live project built under the Boikanyo Legacy name.",
+    detail: "The source repository is private.",
+    stack: [],
+    categories: ["fullstack"],
+    live: "https://boikanyo-legacy.vercel.app/",
+  },
+  {
+    slug: "commuteit",
+    name: "CommuteIt",
+    blurb: "A live project focused on commuting.",
+    detail: "The source repository is private.",
+    stack: [],
+    categories: ["fullstack"],
+    live: "https://commuteit.vercel.app/",
+  },
   {
     slug: "thuso",
     name: "Thuso",
