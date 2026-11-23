@@ -182,12 +182,35 @@ export type Certification = {
   linkLabel?: string;
 };
 
-// To add one: copy a block, and paste the "Show credential" URL from LinkedIn into `link`.
+// Add a certificate or coursework URL (including a file under public/) in `link`.
 export const certifications: Certification[] = [
+  {
+    name: "Introduction to Cybersecurity",
+    issuer: "Cisco Networking Academy",
+    when: "31 Aug 2026",
+    link: "./certifications/introduction-to-cybersecurity-cisco.pdf",
+    linkLabel: "View certificate",
+  },
+  {
+    name: "Intermediate Java",
+    issuer: "DataCamp",
+    when: "21 Mar 2026",
+    link: "./certifications/intermediate-java-datacamp.pdf",
+    linkLabel: "View certificate",
+  },
+  {
+    name: "GenAI Course for Software Engineers",
+    issuer: "WeThinkCode_",
+    when: "13 Mar 2026",
+    link: "./certifications/genai-course-software-engineers.pdf",
+    linkLabel: "View certificate",
+  },
   {
     name: "SheCodes Basics Certificate",
     issuer: "SheCodes",
-    when: "Feb 2026",
+    when: "7 Feb 2026",
+    link: "./certifications/shecodes-basics.png",
+    linkLabel: "View certificate",
   },
   {
     name: "Red Hat Enterprise Linux Technical Overview (RH024)",
